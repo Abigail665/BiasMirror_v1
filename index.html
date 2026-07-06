@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Framelines — watch the framing happen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>Framelines</h1>
+      <p class="tagline">Same facts. Different frames. Watch it happen.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section class="input-panel">
+      <label for="key-input" class="key-label">
+        Anthropic API key
+        <span class="hint">stored only in your browser, never sent anywhere but api.anthropic.com</span>
+      </label>
+      <input type="password" id="key-input" placeholder="sk-ant-..." autocomplete="off" />
+
+      <label for="article-input" class="article-label">Article or claim</label>
+      <textarea id="article-input" placeholder="Paste a news article, headline, or political claim here..."></textarea>
+
+      <button id="analyze-btn" type="button">Show the frames</button>
+      <p id="error-msg" class="error-msg hidden"></p>
+    </section>
+
+    <section id="facts-panel" class="facts-panel hidden">
+      <span class="facts-eyebrow">The underlying facts</span>
+      <p id="facts-text"></p>
+    </section>
+
+    <section id="frames-grid" class="frames-grid"></section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Illustrative AI-generated framings — not real quotes from any publication. For watching bias in action, not fact-checking.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
