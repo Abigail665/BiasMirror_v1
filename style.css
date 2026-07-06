@@ -1,1 +1,216 @@
+:root {
+  --paper: #eeefe9;
+  --paper-raised: #f8f8f4;
+  --ink: #1b1b18;
+  --ink-soft: #55564d;
+  --rule: #d3d3c8;
 
+  --c-progressive: #2f6f5e;
+  --c-conservative: #a13d2d;
+  --c-centrist: #35465c;
+  --c-populist: #b8862b;
+
+  --font-display: "Source Serif 4", Georgia, serif;
+  --font-body: "Inter", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Masthead */
+.masthead {
+  border-bottom: 3px solid var(--ink);
+  padding: 28px 20px 18px;
+  text-align: center;
+}
+
+.masthead-inner h1 {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.tagline {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  margin: 6px 0 0;
+}
+
+/* Layout */
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 36px 20px 60px;
+}
+
+/* Input panel */
+.input-panel {
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 32px;
+}
+
+.key-label, .article-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.hint {
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 0.7rem;
+  color: #8a8b80;
+}
+
+#key-input, #article-input {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 10px 12px;
+  background: white;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+#article-input {
+  min-height: 160px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+#key-input:focus, #article-input:focus {
+  outline: 2px solid var(--c-centrist);
+  outline-offset: 1px;
+}
+
+#analyze-btn {
+  align-self: flex-start;
+  margin-top: 8px;
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 12px 22px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#analyze-btn:hover { background: #333329; }
+#analyze-btn:disabled { background: #999; cursor: wait; }
+
+.error-msg {
+  color: var(--c-conservative);
+  font-size: 0.85rem;
+  margin: 8px 0 0;
+}
+
+.hidden { display: none !important; }
+
+/* Facts panel */
+.facts-panel {
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding: 16px 0;
+  margin-bottom: 32px;
+}
+
+.facts-eyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+}
+
+#facts-text {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+  color: var(--ink);
+}
+
+/* Frames grid */
+.frames-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.frame-col {
+  padding: 20px 22px;
+  border-left: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.frame-col:first-child { border-left: none; }
+
+.frame-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 3px 8px;
+  border-radius: 2px;
+  color: white;
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.frame-col[data-frame="progressive"] .frame-kicker { background: var(--c-progressive); }
+.frame-col[data-frame="conservative"] .frame-kicker { background: var(--c-conservative); }
+.frame-col[data-frame="centrist"] .frame-kicker { background: var(--c-centrist); }
+.frame-col[data-frame="populist"] .frame-kicker { background: var(--c-populist); }
+
+.frame-text {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .frame-col { border-left: none; border-top: 1px solid var(--rule); }
+  .frame-col:first-child { border-top: none; }
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  border-top: 1px solid var(--rule);
+}
