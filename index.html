@@ -20,16 +20,27 @@
   <main class="wrap">
 
     <section class="input-panel">
-      <label for="key-input" class="key-label">
-        Anthropic API key
-        <span class="hint">stored only in your browser, never sent anywhere but api.anthropic.com</span>
-      </label>
-      <input type="password" id="key-input" placeholder="sk-ant-..." autocomplete="off" />
-
-      <label for="article-input" class="article-label">Article or claim</label>
+      <label for="article-input" class="article-label">Step 1 — Article or claim</label>
       <textarea id="article-input" placeholder="Paste a news article, headline, or political claim here..."></textarea>
 
-      <button id="analyze-btn" type="button">Show the frames</button>
+      <button id="generate-btn" type="button">Generate prompt</button>
+    </section>
+
+    <section id="prompt-panel" class="input-panel hidden">
+      <label class="article-label">
+        Step 2 — Copy this into
+        <a href="https://claude.ai" target="_blank" rel="noopener">Claude.ai</a>
+        or <a href="https://chatgpt.com" target="_blank" rel="noopener">ChatGPT</a> (free), then copy its reply
+      </label>
+      <textarea id="prompt-output" readonly></textarea>
+      <button id="copy-prompt-btn" type="button">Copy prompt</button>
+      <span id="copy-confirm" class="copy-confirm hidden">Copied!</span>
+    </section>
+
+    <section id="response-panel" class="input-panel hidden">
+      <label for="response-input" class="article-label">Step 3 — Paste the AI's reply here</label>
+      <textarea id="response-input" placeholder="Paste the full response you got back..."></textarea>
+      <button id="render-btn" type="button">Show the frames</button>
       <p id="error-msg" class="error-msg hidden"></p>
     </section>
 
