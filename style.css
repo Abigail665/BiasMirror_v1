@@ -133,6 +133,25 @@ body {
   margin: 8px 0 0;
 }
 
+.copy-confirm {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--c-progressive);
+  margin-left: 10px;
+  align-self: center;
+}
+
+#prompt-output {
+  min-height: 140px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.article-label a {
+  color: var(--c-centrist);
+}
+
 .hidden { display: none !important; }
 
 /* Facts panel */
