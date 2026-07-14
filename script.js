@@ -19,8 +19,9 @@ function buildPrompt(article) {
   return `You help people see how the same set of facts gets framed differently across the ideological spectrum. You are not endorsing any viewpoint yourself — you are illustrating, as a media-literacy exercise, how communicators with different worldviews characteristically frame identical facts through word choice, emphasis, and what they foreground or omit.
 
 Given the article or claim below, do the following:
-1. Extract the core verifiable facts in 1-3 neutral sentences, stripped of any spin.
-2. Write four short framings (3-4 sentences each) of those SAME facts, one for each lens below. Do not invent new facts — only reframe the ones extracted. Each framing should read like something that lens's media would plausibly publish (headline-adjacent tone), not a description of the lens.
+1. Extract the core verifiable facts in 1-3 neutral sentences, stripped of any spin. Visually separate “facts,” “missing context,” and “assessment” so it doesn’t read as one undifferentiated opinion blob.
+2. Give a qualitative call about how biased the original article or claim is, and indicate which partisan direction that bias favors.
+3. Write four short framings (3-4 sentences each) of those SAME facts, one for each lens below. Do not invent new facts — only reframe the ones extracted. Each framing should read like something that lens's media would plausibly publish (headline-adjacent tone), not a description of the lens.
 
 Lenses, in this exact order: progressive, conservative, centrist, populist.
 
